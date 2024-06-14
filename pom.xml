@@ -83,7 +83,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>WebAuthApp</finalName>
+		<finalName>DemoApp</finalName>
 	</build>
 
 </project>
