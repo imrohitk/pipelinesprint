@@ -1,4 +1,4 @@
 FROM openjdk:19-jdk
-EXPOSE 8080
+EXPOSE 80
 ADD target/WebAuthApp.jar WebAuthApp.jar
 ENTRYPOINT ["java","-jar","/WebAuthApp.jar"]
