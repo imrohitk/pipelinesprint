@@ -18,8 +18,12 @@ jobs:
         cache:  maven
     -  name: Build With maven
        run: mvn clean install -DskipTets
-    -  name: Upload Artifact
-       uses: actions/upload-artifact@v3
+    -  name: Docker Build
+       uses: mr-smithers-excellent/docker-build-push@v5
        with:
-        name: Package
-        path: /home/runner/work/pipelinesprint/pipelinesprint/target/
+        image: springboot/webauthapp
+        tags: latest
+        registory: docker.io
+        dockerfile: dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
