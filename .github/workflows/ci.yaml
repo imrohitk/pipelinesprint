@@ -23,7 +23,7 @@ jobs:
        with:
         image: springboot/webauthapp
         tags: latest
-        registory: docker.io
+        registry: docker.io
         dockerfile: dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
