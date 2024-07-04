@@ -17,7 +17,7 @@ jobs:
         distribution: 'temurin'
         cache:  maven
     -  name: Build With maven
-       run: mvn clean install -DskipTets
+       run: mvn -B package --file pom.xml -DskipTests
     -  name: Docker Build
        uses: mr-smithers-excellent/docker-build-push@v5
        with:
