@@ -21,7 +21,7 @@ jobs:
     -  name: Docker Build
        uses: mr-smithers-excellent/docker-build-push@v6
        with:
-        image: imrohitk/webauthapp
+        image: imrohitk/webapplication
         tags: v1
         registry: docker.io
         dockerfile: Dockerfile
