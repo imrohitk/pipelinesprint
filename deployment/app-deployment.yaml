@@ -18,35 +18,35 @@ spec:
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
-            # - name: DB_HOST   # Setting Database host address from configMap
-            #   valueFrom :
-            #     configMapKeyRef :
-            #       name : db-config
-            #       key :  host
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://34.123.147.55:3306/webauthapp?useSSL=false&serverTimezone=UTC
-            - name: SPRING_DATASOURCE_USERNAME
-              value: root
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: root
+            - name: DB_HOST   # Setting Database host address from configMap
+              valueFrom :
+                configMapKeyRef :
+                  name : db-config
+                  key :  host
+            # - name: SPRING_DATASOURCE_URL
+            #   value: jdbc:mysql://34.123.147.55:3306/webauthapp?useSSL=false&serverTimezone=UTC
+            # - name: SPRING_DATASOURCE_USERNAME
+            #   value: root
+            # - name: SPRING_DATASOURCE_PASSWORD
+            #   value: root
 
-            # - name: DB_NAME  # Setting Database name from configMap
-            #   valueFrom :
-            #     configMapKeyRef :
-            #       name : db-config
-            #       key :  dbName
+            - name: DB_NAME  # Setting Database name from configMap
+              valueFrom :
+                configMapKeyRef :
+                  name : db-config
+                  key :  dbName
 
-            # - name: MYSQL_USER  # Setting Database username from Secret
-            #   valueFrom :
-            #     secretKeyRef :
-            #       name : mysql-secrets
-            #       key :  username
+            - name: MYSQL_USER  # Setting Database username from Secret
+              valueFrom :
+                secretKeyRef :
+                  name : mysql-secrets
+                  key :  username
 
-            # - name: MYSQL_PASSWORD # Setting Database password from Secret
-            #   valueFrom :
-            #     secretKeyRef :
-            #       name : mysql-secrets
-            #       key :  password
+            - name: MYSQL_PASSWORD # Setting Database password from Secret
+              valueFrom :
+                secretKeyRef :
+                  name : mysql-secrets
+                  key :  password
 
 ---
 
