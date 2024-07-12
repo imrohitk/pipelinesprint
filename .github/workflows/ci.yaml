@@ -27,10 +27,14 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    -   name: Set up Google Cloud SDK
+    -   name: Authentication to gcp
         uses: google-github-actions/auth@v1
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
+    -   name: Setup SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          install_components: 'kubectl,gke-gcloud-auth-plugin'
     -   name: Set Kubeconfig for GKE Cluster
         run: |
           gcloud container clusters get-credentials donotdeletetill13july --region us-central1-c --project ${{ secrets.GCP_PROJECT_ID }}
