@@ -28,7 +28,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     -   name: Set up Google Cloud SDK
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@v3
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@v2
         with:
           version: '270.0.0'
           project_id: ${{ secrets.GCP_PROJECT_ID }}
