@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: springboot-crud-k8s
-          image: imrohitk/springboot:v1
+          image: imrohitk/webauthapp:v1
           ports:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
