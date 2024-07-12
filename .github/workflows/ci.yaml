@@ -22,7 +22,7 @@ jobs:
        uses: mr-smithers-excellent/docker-build-push@v6
        with:
         image: imrohitk/springboot
-        tags: v3
+        tags: v1
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
